@@ -161,6 +161,7 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
   color: var(--ink);
 }
 .brand img { height: 52px; width: auto; }
+.brand .brand-name { height: 40px; }
 .brand .text { display: flex; flex-direction: column; line-height: 1; }
 .brand .name {
   font-family: 'Inter', sans-serif;
@@ -313,6 +314,7 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
   .menu-toggle { display: block; }
   .header-inner { height: 72px; }
   .brand img { height: 44px; }
+  .brand .brand-name { height: 34px; }
   .header-phone span:last-child { display: none; }
 }
 
