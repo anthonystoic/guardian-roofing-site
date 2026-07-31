@@ -317,13 +317,28 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
   .brand .brand-name { height: 34px; }
   .header-phone span:last-child { display: none; }
 }
-/* phones: drop the header CTA (it collides with the logo); the hamburger
-   menu and the sticky call bar already carry the calls-to-action */
+/* phones: keep the header CTA but make it compact so it never overlaps the
+   logo. Drop the phone icon (the sticky call bar covers that), shrink the
+   button + logo slightly, and keep everything on one no-wrap row. */
 @media (max-width: 600px) {
-  .header-cta { display: none; }
-  .header-inner { height: 68px; }
-  .brand img { height: 46px; }
-  .brand .brand-name { height: 38px; }
+  .header-inner { height: 66px; gap: 8px; padding: 0 12px; }
+  .brand { gap: 8px; min-width: 0; }
+  .brand img { height: 38px; }
+  .brand .brand-name { height: 28px; }
+  .header-cta { gap: 8px; flex: 0 0 auto; }
+  .header-cta .header-phone { display: none; }
+  .header-cta .btn-primary {
+    padding: 9px 13px;
+    font-size: 12.5px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .menu-toggle { padding: 4px; }
+  .menu-toggle svg { width: 26px; height: 26px; }
+}
+@media (max-width: 360px) {
+  .brand .brand-name { height: 24px; }
+  .header-cta .btn-primary { font-size: 12px; padding: 8px 11px; }
 }
 
 /* ---------- buttons ---------- */
