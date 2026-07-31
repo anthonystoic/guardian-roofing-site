@@ -886,6 +886,9 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
   display: inline-flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 11px;
 }
+a.ggl { text-decoration: none; cursor: pointer; transition: color .2s var(--t); }
+a.ggl:hover { color: var(--ink); text-decoration: underline; }
+.reviews-cta { text-align: center; margin-top: 36px; }
 @media (max-width: 920px) { .reviews { grid-template-columns: 1fr; } }
 
 /* ---------- service area ---------- */
