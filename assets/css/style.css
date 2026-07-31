@@ -317,6 +317,14 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
   .brand .brand-name { height: 34px; }
   .header-phone span:last-child { display: none; }
 }
+/* phones: drop the header CTA (it collides with the logo); the hamburger
+   menu and the sticky call bar already carry the calls-to-action */
+@media (max-width: 600px) {
+  .header-cta { display: none; }
+  .header-inner { height: 68px; }
+  .brand img { height: 46px; }
+  .brand .brand-name { height: 38px; }
+}
 
 /* ---------- buttons ---------- */
 .btn {
@@ -872,7 +880,7 @@ section { padding: clamp(60px, 7vw, 96px) 0; }
 .cities .city.home { background: var(--ink); color: #fff; font-weight: 700; }
 .cities .city.home::before { content: "★"; color: #ffffff; }
 @media (max-width: 880px) { .coverage { grid-template-columns: 1fr; } .cities { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .cities { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .cities { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- final CTA band ---------- */
 .cta-band {
