@@ -114,7 +114,14 @@ fbq('track', 'PageView');
       })
         .then(function (r) { return r.json(); })
         .then(function (json) {
-          if (json && json.success) { showLeadSuccess(f); }
+          if (json && json.success) {
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead', {
+                content_name: f.getAttribute('data-subject') || 'Website lead'
+              });
+            }
+            showLeadSuccess(f);
+          }
           else { showLeadError(f, btn, original); }
         })
         .catch(function () { showLeadError(f, btn, original); });
