@@ -87,6 +87,15 @@ fbq('track', 'PageView');
 
     f.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Enforce required fields (referral "How did you find us?", contact info, etc.)
+      // before sending. We intercept submit with preventDefault, so guarantee the
+      // browser's constraint validation actually runs — no lead goes out incomplete.
+      if (!f.checkValidity()) {
+        f.reportValidity();
+        return;
+      }
+
       var btn = f.querySelector('button[type="submit"]');
       var original = btn ? btn.innerHTML : '';
       var errBox = f.querySelector('.form-error');
